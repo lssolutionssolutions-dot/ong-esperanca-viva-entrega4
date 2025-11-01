@@ -1,0 +1,27 @@
+/* === CORES === */
+:root {
+  --color-primary: #007b5e;   /* Verde principal */
+  --color-secondary: #f4f4f4; /* Fundo das seções */
+  --color-white: #ffffff;     /* Branco puro */
+  --color-dark: #222222;      /* Textos e rodapé */
+  --color-accent: #00c368;    /* Verde destaque dos ícones */
+}
+
+  /* TIPOGRAFIA */
+  --font-family: 'Poppins', Arial, sans-serif;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 22px;
+
+  /* ESPAÇAMENTO */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+
+  /* ESTILOS DE BORDA E SOMBRA */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

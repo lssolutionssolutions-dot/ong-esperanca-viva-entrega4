@@ -1,0 +1,400 @@
+/* Centraliza o conteúdo principal e limita a largura para não “espalhar” */
+.section {
+  max-width: 900px;
+  margin: 0 auto 30px auto; /* centraliza e dá espaçamento inferior */
+}
+/* === AJUSTE FINAL QUEM SOMOS (ATIVIDADE 2 ORIGINAL) === */
+
+/* Centraliza e limita o conteúdo */
+.section {
+  max-width: 950px;
+  margin: 0 auto 30px auto;
+  text-align: center;
+}
+
+/* Logo da ONG centralizado com espaçamento maior */
+.section img.logo {
+  display: block;
+  margin: 20px auto;
+  width: 180px; /* tamanho ideal do logo */
+}
+
+/* Alinha as duas imagens lado a lado e iguais */
+.section .media-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px; /* espaçamento entre as imagens */
+  margin-top: 10px;
+}
+
+/* Tamanho fixo e proporcional para as imagens */
+.section .media-row img {
+  width: 250px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.section .media-row img:hover {
+  transform: scale(1.03);
+}
+
+/* Garantia de boa proporção no mobile */
+@media (max-width: 768px) {
+  .section .media-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .section .media-row img {
+    width: 80%;
+    height: auto;
+  }
+}
+/* === AJUSTE DE LARGURA PADRÃO PARA TODAS AS SEÇÕES === */
+main {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.section {
+  flex: 1 1 900px;
+  max-width: 950px;
+  margin: 0 auto 30px auto;
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-4);
+  text-align: center;
+}
+
+/* Garante que a barra lateral (galeria) mantenha proporção */
+aside {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  aside {
+    width: 90%;
+  }
+
+  .section {
+    width: 90%;
+  }
+}
+/* === MENSAGENS DE VALIDAÇÃO === */
+#msg {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+/* Sucesso */
+.success {
+  color: #1b5e20;
+  background-color: #e8f5e9;
+  border: 1px solid #66bb6a;
+  box-shadow: 0 2px 5px rgba(27, 94, 32, 0.2);
+}
+
+/* Erro */
+.error {
+  color: #c62828;
+  background-color: #ffebee;
+  border: 1px solid #ef5350;
+  box-shadow: 0 2px 5px rgba(198, 40, 40, 0.2);
+}
+
+/* Animação suave de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* === ACESSIBILIDADE === */
+body.modo-alto-contraste {
+  background-color: #000;
+  color: #fff;
+}
+
+body.modo-alto-contraste a {
+  color: #00e6b8;
+}
+
+body.modo-alto-contraste header,
+body.modo-alto-contraste footer {
+  background-color: #111;
+  color: #fff;
+}
+
+/* Botão de contraste */
+button#btnContraste {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+button#btnContraste:hover {
+  background-color: #0056b3;
+}
+/* === LISTA DE CADASTROS === */
+.lista-cadastros {
+  margin-top: 40px;
+}
+
+.lista-cadastros table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.lista-cadastros th,
+.lista-cadastros td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.lista-cadastros th {
+  background-color: #007bff;
+  color: #fff;
+}
+/* === CORREÇÃO DE ALINHAMENTO DO FORMULÁRIO === */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-4);
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin-top: 4px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  padding: 12px 18px;
+}
+
+legend {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+/* === BOTÃO DE MENU "QUERO AJUDAR AGORA" === */
+.btn-ajudar {
+  background-color: var(--color-accent);
+  color: #fff !important;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-ajudar:hover {
+  background-color: var(--color-primary);
+  transform: scale(1.05);
+}
+/* === HERO (BANNER PRINCIPAL) === */
+/* === SEÇÃO HERO (banner principal) === */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 90px 80px;
+  border-radius: 0 0 25px 25px;
+
+  /* Camadas: degradê + imagem */
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.92) 35%, rgba(255, 255, 255, 0.05) 75%),
+    url("../imagens2/logo1.jpg");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+
+  color: #0b4d2b;
+  min-height: 520px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: zoomHero 15s ease-in-out infinite alternate;
+}
+
+/* Efeito de movimento da imagem */
+@keyframes zoomHero {
+  from { background-size: 102%; }
+  to { background-size: 108%; }
+}
+
+/* Conteúdo */
+.hero-content {
+  max-width: 600px;
+  z-index: 2;
+}
+
+/* Título */
+.hero h1 {
+  font-size: 2.6rem;
+  color: var(--color-primary); /* verde principal do site */
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+/* Parágrafo */
+.hero p {
+  font-size: 1.15rem;
+  color: #0b4d2b; /* verde escuro legível */
+  font-weight: 500;
+  max-width: 600px;
+  margin-bottom: 25px;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
+}
+
+.btn-hero {
+  background-color: var(--color-accent);
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+  display: inline-block;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.btn-hero:hover {
+  background-color: var(--color-primary);
+  transform: scale(1.05);
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    max-width: 90%;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+/* === SEÇÃO HERO - PROJETOS === */
+.hero-projetos {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 90px 80px;
+  border-radius: 0 0 25px 25px;
+  min-height: 480px;
+
+  /* Fundo com degradê e imagem */
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.9) 35%, rgba(255, 255, 255, 0.05) 75%),
+    url("../imagens2/conceito_de_trabalho_em_equipe_ambiente_e_voluntariado.jpg");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+
+  color: #0b4d2b;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  animation: zoomProjetos 15s ease-in-out infinite alternate;
+}
+
+/* Efeito suave de zoom na imagem */
+@keyframes zoomProjetos {
+  from { background-size: 102%; }
+  to { background-size: 108%; }
+}
+
+.hero-projetos .hero-content {
+  max-width: 650px;
+  z-index: 2;
+}
+
+.hero-projetos h1 {
+  font-size: 2.4rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.hero-projetos p {
+  font-size: 1.15rem;
+  color: #0b4d2b;
+  margin-bottom: 25px;
+  font-weight: 500;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
+}
+
+.btn-primario {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btn-primario:hover {
+  background-color: #0e7b4f;
+}

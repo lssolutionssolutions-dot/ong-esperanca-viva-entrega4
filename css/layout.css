@@ -1,0 +1,483 @@
+/* === RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === BASE === */
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  line-height: 1.6;
+}
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-secondary); /* cor de fundo padrão */
+  color: var(--color-dark);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* === CABEÇALHO === */
+header {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--space-3) 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  font-size: 1.8rem;             /* aumenta o tamanho da fonte */
+  color: #ffffff;                /* deixa branco */
+  font-weight: 700;              /* deixa em negrito */
+  letter-spacing: 1px;           /* espaço entre as letras */
+  font-family: 'Poppins', sans-serif; /* fonte moderna e limpa */
+  text-transform: uppercase;     /* deixa tudo em maiúsculas */
+  text-align: center;            /* centraliza */
+  margin-bottom: 8px;            /* pequeno espaçamento abaixo */
+}
+
+}
+
+}
+
+nav ul {
+  list-style: none;
+  display: flex;  
+  justify-content: center;
+  gap: 30px; /* <-- adiciona o espaço entre os links */
+  padding: 0;
+  margin: 0;
+}
+/* Garante que o menu fique horizontal em todas as páginas */
+nav.menu ul {
+  flex-direction: row; /* força o menu principal a ficar horizontal */
+}
+nav a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--color-accent);
+}
+
+}
+
+/* === CONTEÚDO PRINCIPAL === */
+main {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-5) 0;
+}
+
+/* === CONTAINER PADRÃO === */
+.container {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  width: 90%;
+  max-width: 1100px !important;
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+/* === RODAPÉ === */
+footer {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--space-3);
+  font-size: var(--font-size-sm);
+}
+
+/* === SEÇÃO "QUEM SOMOS" === */
+section.quem-somos {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+section.quem-somos img:first-of-type {
+  width: 220px;
+  height: auto;
+  display: block;
+  margin: 10px auto 15px;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+section.quem-somos img:not(:first-of-type) {
+  width: 28%;
+  max-width: 240px;
+  height: 130px;
+  margin: 6px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  section.quem-somos img:first-of-type {
+    width: 60%;
+  }
+
+  section.quem-somos img:not(:first-of-type) {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 5px 0;
+    display: block;
+  }
+}
+
+/* === GALERIAS (Home e Projetos) === */
+section.gallery-home .gallery-home,
+section.gallery-projetos .gallery-projetos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  justify-items: center;
+  align-items: start;
+  padding: 20px 0;
+}
+
+/* Cada card */
+section.gallery-home figure,
+section.gallery-projetos figure {
+  width: 100%;
+  max-width: 350px;
+  background: #fff;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Imagens */
+section.gallery-home img,
+section.gallery-projetos img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Legenda */
+section.gallery-home figcaption,
+section.gallery-projetos figcaption {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+/* Efeito hover */
+section.gallery-home figure:hover,
+section.gallery-projetos figure:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 1024px) {
+  section.gallery-home .gallery-home,
+  section.gallery-projetos .gallery-projetos {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  section.gallery-home .gallery-home,
+  section.gallery-projetos .gallery-projetos {
+    grid-template-columns: 1fr;
+  }
+
+  section.gallery-home img,
+  section.gallery-projetos img {
+    height: 200px;
+  }
+
+  .container {
+    max-width: 95% !important;
+  }
+}
+/* === ANIMAÇÃO DE ENTRADA SUAVE (fade + zoom) === */
+@keyframes fadeZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Aplica a animação em cada card de projeto */
+.gallery-home figure,
+.gallery-projetos figure {
+  animation: fadeZoomIn 0.8s ease forwards;
+  opacity: 0;
+}
+
+/* Faz com que os cards apareçam um por um */
+.gallery-home figure:nth-child(1),
+.gallery-projetos figure:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.gallery-home figure:nth-child(2),
+.gallery-projetos figure:nth-child(2) {
+  animation-delay: 0.25s;
+}
+.gallery-home figure:nth-child(3),
+.gallery-projetos figure:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.gallery-home figure:nth-child(4),
+.gallery-projetos figure:nth-child(4) {
+  animation-delay: 0.55s;
+}
+
+/* === HOVER MAIS INTERATIVO === */
+.gallery-home figure:hover,
+.gallery-projetos figure:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Adiciona um leve brilho na imagem */
+.gallery-home figure:hover img,
+.gallery-projetos figure:hover img {
+  filter: brightness(1.05);
+  transition: filter 0.3s ease;
+}
+/* === ANIMAÇÃO SUAVE PARA A SEÇÃO "QUEM SOMOS" === */
+
+/* Reaproveita a animação fadeZoomIn já criada */
+section.quem-somos img {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeZoomIn 0.9s ease forwards;
+}
+
+/* Delay diferente para cada imagem, criando efeito em sequência */
+section.quem-somos img:first-of-type {
+  animation-delay: 0.1s;
+}
+section.quem-somos img:nth-of-type(2) {
+  animation-delay: 0.25s;
+}
+section.quem-somos img:nth-of-type(3) {
+  animation-delay: 0.4s;
+}
+
+/* Efeito de brilho leve ao passar o mouse */
+section.quem-somos img:hover {
+  filter: brightness(1.08);
+  transform: scale(1.03);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+/* === ANIMAÇÃO SUAVE PARA TÍTULOS E TEXTOS DA SEÇÃO "QUEM SOMOS" === */
+
+/* Reaproveita a mesma animação base */
+section.quem-somos h2,
+section.quem-somos p {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeZoomIn 0.8s ease forwards;
+}
+
+/* Título entra primeiro */
+section.quem-somos h2 {
+  animation-delay: 0.1s;
+}
+
+/* Textos aparecem em sequência */
+section.quem-somos p:nth-of-type(1) {
+  animation-delay: 0.25s;
+}
+
+section.quem-somos p:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+/* === ANIMAÇÃO SUAVE PARA A SEÇÃO "GALERIA DE PROJETOS" === */
+
+/* Título da galeria */
+section.gallery-home h2,
+section.gallery-projetos h2 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeZoomIn 0.9s ease forwards;
+  animation-delay: 0.1s;
+}
+
+/* Figcaption (legendas das imagens) */
+section.gallery-home figcaption,
+section.gallery-projetos figcaption {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeZoomIn 0.8s ease forwards;
+}
+
+/* Delay progressivo para legendas */
+section.gallery-home figure:nth-child(1) figcaption,
+section.gallery-projetos figure:nth-child(1) figcaption {
+  animation-delay: 0.3s;
+}
+section.gallery-home figure:nth-child(2) figcaption,
+section.gallery-projetos figure:nth-child(2) figcaption {
+  animation-delay: 0.45s;
+}
+section.gallery-home figure:nth-child(3) figcaption,
+section.gallery-projetos figure:nth-child(3) figcaption {
+  animation-delay: 0.6s;
+}
+section.gallery-home figure:nth-child(4) figcaption,
+section.gallery-projetos figure:nth-child(4) figcaption {
+  animation-delay: 0.75s;
+}
+/* ======== MENU HAMBÚRGUER RESPONSIVO ======== */
+header {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--space-3) 0;
+  position: relative;
+}
+
+header h1 {
+  font-size: var(--font-size-lg);
+  margin-bottom: 6px;
+}
+
+/* Estilo padrão do menu */
+nav.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+nav.menu a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav.menu a:hover {
+  color: var(--color-accent);
+}
+
+}
+
+/* Botão hambúrguer (mobile) */
+.menu-toggle {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ======== MODO MOBILE ======== */
+@media (max-width: 768px) {
+  nav.menu ul {
+    flex-direction: column;
+    background-color: var(--color-dark);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    display: none;
+    padding: 15px 0;
+  }
+
+  nav.menu ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+/* === CORREÇÃO DE SEÇÃO PRINCIPAL === */
+.section {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+  text-align: center;
+}
+
+/* === TÍTULO DAS SEÇÕES === */
+.section h2 {
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+/* === IMAGENS PRINCIPAIS (ONG e ações) === */
+.section img {
+  width: 220px;
+  height: auto;
+  border-radius: var(--radius-sm);
+  margin: var(--space-2);
+  vertical-align: middle;
+}
+
+/* === GALERIA DE PROJETOS (lado direito) === */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.gallery img {
+  width: 230px;
+  height: auto;
+  border-radius: var(--radius-sm);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* === CAIXAS DOS ITENS DA GALERIA === */
+.gallery-item {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-2);
+  text-align: center;
+  width: 250px;
+}
+/* === AJUSTE DO RODAPÉ PARA 100% === */
+footer {
+  width: 100vw; /* ocupa toda a largura da janela */
+  margin: 0; /* remove margens indesejadas */
+  left: 0;
+  position: relative;
+  box-sizing: border-box;
+}
